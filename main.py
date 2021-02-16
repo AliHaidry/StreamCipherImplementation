@@ -4,7 +4,7 @@ import random
 def stream_cipher(aray,seed):
     n = len(aray)
     random.seed(seed)
-    ascii_chars = [chr(i) for i in range(255)]
+    ascii_chars = [chr(counter) for counter in range(255)]
     keys = random.choices(ascii_chars,k = n)
     return [chr(ord(a) ^ ord(b)) for a, b in zip(aray, keys)]
 
